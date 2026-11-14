@@ -3,9 +3,9 @@
 
   <button class="menu-btn" (click)="abierto = !abierto" aria-label="Abrir menú">☰</button>
 
-  <nav [class.abierto]="abierto" (click)="abierto = false">
+  <nav [class.abierto]="abierto" (click)="cerrar()">
     <a href="#inicio">Inicio</a>
-    <a href="#historia">Nosotros</a>
+    <a href="#historia">Historia</a>
     <a href="#catalogo">Catálogo</a>
     <a href="#precios">Precios</a>
     <a href="#chat">Chat</a>

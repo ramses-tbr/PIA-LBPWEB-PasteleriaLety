@@ -8,4 +8,8 @@ import { Component } from '@angular/core';
 })
 export class Encabezado {
   abierto = false;
+
+  cerrar(){
+    this.abierto = false;
+  }
 }
