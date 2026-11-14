@@ -1,0 +1,13 @@
+<header class="encabezado">
+  <a href="#inicio" class="marca">Pastelería Lety</a>
+
+  <button class="menu-btn" (click)="abierto = !abierto" aria-label="Abrir menú">☰</button>
+
+  <nav [class.abierto]="abierto" (click)="abierto = false">
+    <a href="#inicio">Inicio</a>
+    <a href="#historia">Nosotros</a>
+    <a href="#catalogo">Catálogo</a>
+    <a href="#precios">Precios</a>
+    <a href="#chat">Chat</a>
+  </nav>
+</header>
