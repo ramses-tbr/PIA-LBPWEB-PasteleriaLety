@@ -1,17 +1,279 @@
+/* =========================================================
+   PASTELERÍA LETY — ESTILOS GLOBALES (Integrante 2)
+   Identidad visual: paleta, tipografías y clases reutilizables.
+   Todos los componentes deben usar estas variables, por ejemplo:
+     color: var(--color-texto);
+     background: var(--color-principal);
+   ========================================================= */
+
+/* ---------- Tipografías (Google Fonts) ---------- */
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* ---------- Paleta y variables globales ---------- */
+:root {
+  /* Colores tomados del logotipo.
+     IMPORTANTE: el encabezado y el pie de página usan
+     --color-principal (claro) y --color-texto (oscuro) como pareja
+     fondo/texto, así que estos dos siempre deben contrastar. */
+  --color-principal: #edc3b2;        /* rosa durazno (borde del logo): fondos claros */
+  --color-cafe: #725128;             /* café chocolate (óvalo del logo): títulos y fondos fuertes */
+  --color-cafe-oscuro: #4e361a;
+  --color-acento: #c4521b;           /* naranja caramelo ("Pastelería"): botones y enlaces */
+  --color-acento-oscuro: #9e3f12;
+  --color-rosa: #edc3b2;             /* mismo tono que --color-principal */
+  --color-rosa-claro: #f8e3d9;
+  --color-crema: #fdf6ef;            /* fondo general */
+  --color-blanco: #ffffff;
+
+  /* Texto */
+  --color-texto: #3b2a1a;            /* café muy oscuro: texto general */
+  --color-texto-suave: #6e5a48;
+  --color-texto-claro: #ffffff;
+
+  /* Tipografías */
+  --fuente-titulos: 'Lobster', cursive;
+  --fuente-texto: 'Poppins', Arial, sans-serif;
+
+  /* Tamaños de texto */
+  --texto-pequeno: 0.875rem;
+  --texto-normal: 1rem;
+  --texto-grande: 1.25rem;
+  --titulo-seccion: 2.25rem;
+  --titulo-principal: 3.5rem;
+
+  /* Espaciado, bordes y sombras */
+  --espacio-xs: 0.5rem;
+  --espacio-sm: 1rem;
+  --espacio-md: 2rem;
+  --espacio-lg: 4rem;
+  --radio: 12px;
+  --radio-grande: 24px;
+  --sombra: 0 4px 14px rgba(114, 81, 40, 0.15);
+  --sombra-fuerte: 0 10px 28px rgba(114, 81, 40, 0.25);
+  --transicion: 0.25s ease;
+  --ancho-maximo: 1200px;
+}
+
+/* ---------- Reinicio básico ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 html {
   scroll-behavior: smooth;
 }
 
-* {
-  box-sizing: border-box;
-}
-
 body {
-  margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: var(--fuente-texto);
+  font-size: var(--texto-normal);
+  line-height: 1.6;
+  color: var(--color-texto);
+  background-color: var(--color-crema);
+  min-height: 100vh;
+  overflow-x: hidden; /* evita scroll horizontal en celulares */
 }
 
-:root {
-  --color-principal: #fac988;
-  --color-texto: #582602;
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: var(--color-acento);
+  text-decoration: none;
+  transition: color var(--transicion);
+}
+
+a:hover {
+  color: var(--color-acento-oscuro);
+}
+
+/* ---------- Tipografía ---------- */
+h1,
+h2,
+h3 {
+  font-family: var(--fuente-titulos);
+  font-weight: 400;
+  color: var(--color-cafe);
+  line-height: 1.2;
+}
+
+h1 { font-size: var(--titulo-principal); }
+h2 { font-size: var(--titulo-seccion); margin-bottom: var(--espacio-sm); }
+h3 { font-size: 1.5rem; margin-bottom: var(--espacio-xs); }
+
+h4,
+h5,
+h6 {
+  font-family: var(--fuente-texto);
+  font-weight: 600;
+  color: var(--color-texto);
+}
+
+p {
+  color: var(--color-texto-suave);
+}
+
+/* ---------- Clases reutilizables ---------- */
+
+/* Centra el contenido y limita su ancho */
+.contenedor {
+  width: 100%;
+  max-width: var(--ancho-maximo);
+  margin: 0 auto;
+  padding: 0 var(--espacio-md);
+}
+
+/* Bloque de sección con espacio arriba y abajo */
+.seccion {
+  padding: var(--espacio-lg) 0;
+}
+
+.titulo-seccion {
+  text-align: center;
+  margin-bottom: var(--espacio-xs);
+}
+
+.subtitulo-seccion {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto var(--espacio-md);
+}
+
+/* Botones */
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.75rem;
+  border: 2px solid transparent;
+  border-radius: 50px;
+  font-family: var(--fuente-texto);
+  font-size: var(--texto-normal);
+  font-weight: 600;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color var(--transicion), color var(--transicion),
+    transform var(--transicion), box-shadow var(--transicion);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--sombra);
+}
+
+.btn-principal {
+  background-color: var(--color-acento);
+  color: var(--color-texto-claro);
+}
+
+.btn-principal:hover {
+  background-color: var(--color-acento-oscuro);
+  color: var(--color-texto-claro);
+}
+
+.btn-secundario {
+  background-color: transparent;
+  border-color: var(--color-cafe);
+  color: var(--color-cafe);
+}
+
+.btn-secundario:hover {
+  background-color: var(--color-cafe);
+  color: var(--color-texto-claro);
+}
+
+/* Tarjeta genérica (catálogo, precios, etc.) */
+.tarjeta {
+  background-color: var(--color-blanco);
+  border-radius: var(--radio);
+  box-shadow: var(--sombra);
+  padding: var(--espacio-md);
+  transition: transform var(--transicion), box-shadow var(--transicion);
+}
+
+.tarjeta:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--sombra-fuerte);
+}
+
+/* Cuadrícula responsive: se acomoda sola según el ancho */
+.cuadricula {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--espacio-md);
+}
+
+/* Etiqueta pequeña (categorías, avisos) */
+.etiqueta {
+  display: inline-block;
+  padding: 0.2rem 0.8rem;
+  border-radius: 50px;
+  background-color: var(--color-rosa-claro);
+  color: var(--color-acento-oscuro);
+  font-size: var(--texto-pequeno);
+  font-weight: 600;
+}
+
+/* Campos de formulario (para el chat y filtros) */
+input,
+textarea,
+select {
+  font-family: var(--fuente-texto);
+  font-size: var(--texto-normal);
+  color: var(--color-texto);
+  padding: 0.65rem 1rem;
+  border: 2px solid var(--color-rosa);
+  border-radius: var(--radio);
+  background-color: var(--color-blanco);
+  outline: none;
+  transition: border-color var(--transicion);
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: var(--color-acento);
+}
+
+/* =========================================================
+   RESPONSIVE (adaptación a pantallas pequeñas)
+   ========================================================= */
+
+/* Tablets */
+@media (max-width: 992px) {
+  :root {
+    --titulo-principal: 2.75rem;
+    --titulo-seccion: 2rem;
+    --espacio-lg: 3rem;
+  }
+}
+
+/* Celulares */
+@media (max-width: 768px) {
+  :root {
+    --titulo-principal: 2.25rem;
+    --titulo-seccion: 1.75rem;
+    --espacio-md: 1.25rem;
+    --espacio-lg: 2.5rem;
+  }
+
+  .contenedor {
+    padding: 0 var(--espacio-sm);
+  }
+
+  .cuadricula {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Celulares muy pequeños */
+@media (max-width: 400px) {
+  :root {
+    --titulo-principal: 1.9rem;
+    --texto-normal: 0.95rem;
+  }
 }
