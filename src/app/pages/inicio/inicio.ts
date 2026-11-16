@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 
 // Estructura de cada tarjeta destacada en Inicio
 interface Destacado {
-  icono: string;
   titulo: string;
   descripcion: string;
 }
@@ -23,19 +22,16 @@ export class Inicio {
   // Tarjetas de "Lo que encontrarás"
   destacados: Destacado[] = [
     {
-      icono: '🎂',
       titulo: 'Pasteles para cada ocasión',
       descripcion:
         'Nevados, tres leches, Selva Negra, Milky Way® y más. También puedes llevar tu idea para un pastel personalizado.',
     },
     {
-      icono: '🍰',
       titulo: 'Lety Cachitos',
       descripcion:
         'Pasteles individuales para dos personas en sabores como Carlos V, Zebra y Tentación de Fresa, con opciones sin azúcar.',
     },
     {
-      icono: '🥧',
       titulo: 'Repostería',
       descripcion: 'Empanadas de cajeta, hojarascas, pays y rollos para acompañar cualquier momento.',
     },

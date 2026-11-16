@@ -45,18 +45,7 @@
 /* ===== TARJETAS DESTACADAS ===== */
 .destacado {
   text-align: center;
-}
-
-.destacado-icono {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 70px;
-  height: 70px;
-  margin-bottom: var(--espacio-sm);
-  border-radius: 50%;
-  background-color: var(--color-rosa-claro);
-  font-size: 2rem;
+  border-top: 4px solid var(--color-acento); /* línea de color en lugar de ícono */
 }
 
 /* ===== FRASE INTERACTIVA ===== */
