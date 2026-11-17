@@ -1,2 +1,33 @@
-<h2>Chat</h2>
-<p>aqui va chat</p>
+<h2 class="chat-titulo">Chat</h2>
+<p class="chat-subtitulo">Escríbenos tu duda sobre pasteles, precios o pedidos.</p>
+
+<div class="chat">
+  <div class="chat-header">
+    <span>Pastelería Lety</span>
+    <button class="btn-limpiar" (click)="limpiar()">Limpiar</button>
+  </div>
+
+  <div class="chat-mensajes">
+    @for (m of mensajes(); track $index) {
+      <div class="mensaje" [class.usuario]="m.autor === 'usuario'" [class.bot]="m.autor === 'bot'">
+        <p>{{ m.texto }}</p>
+        <span class="hora">{{ m.hora }}</span>
+      </div>
+    }
+    @if (escribiendo()) {
+      <div class="mensaje bot"><p>Escribiendo...</p></div>
+    }
+  </div>
+
+  <div class="chat-entrada">
+    <input
+      type="text"
+      [value]="nuevoMensaje()"
+      (input)="actualizar($event)"
+      (keydown.enter)="enviar()"
+      placeholder="Escribe tu mensaje..."
+      aria-label="Mensaje"
+    />
+    <button class="btn-enviar" (click)="enviar()">Enviar</button>
+  </div>
+</div>
