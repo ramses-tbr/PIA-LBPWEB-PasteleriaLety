@@ -1,2 +1,68 @@
-<h2>Inicio</h2>
-<p>aqui va inicio</p>
+<!-- ===== PORTADA (HERO) ===== -->
+<section class="hero">
+  <div class="contenedor hero-contenido">
+    <div class="hero-texto">
+      <span class="etiqueta">{{ tipoNegocio }}</span>
+      <h1>{{ nombreNegocio }}</h1>
+      <p class="hero-eslogan">{{ eslogan }}</p>
+      <p class="hero-producto">
+        Nuestra especialidad: <strong>{{ productoPrincipal }}</strong>
+      </p>
+
+      <div class="hero-botones">
+        <a class="btn btn-principal" href="#catalogo">Ver catálogo</a>
+        <a class="btn btn-secundario" href="#precios">Consultar precios</a>
+      </div>
+    </div>
+
+    <div class="hero-imagen">
+      <img
+        src="img/logo-lety.png"
+        alt="Logotipo de Pastelería Lety: óvalo café con el nombre Lety en letra blanca"
+      />
+    </div>
+  </div>
+</section>
+
+<!-- ===== LO QUE ENCONTRARÁS ===== -->
+<section class="seccion">
+  <div class="contenedor">
+    <h2 class="titulo-seccion">Lo que encontrarás en Lety</h2>
+    <p class="subtitulo-seccion">
+      {{ nombreNegocio }} es una empresa familiar de Monterrey con sucursales en Nuevo León y Saltillo.
+    </p>
+
+    <div class="cuadricula">
+      @for (item of destacados; track item.titulo) {
+        <article class="tarjeta destacado">
+          <h3>{{ item.titulo }}</h3>
+          <p>{{ item.descripcion }}</p>
+        </article>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- ===== DATO CURIOSO (INTERACTIVO) ===== -->
+<section class="frase">
+  <div class="contenedor frase-contenido">
+    <p class="frase-titulo">¿Sabías que...?</p>
+    <p class="frase-texto">{{ datos[indiceDato] }}</p>
+    <button class="btn btn-principal" type="button" (click)="cambiarDato()">
+      Otro dato
+    </button>
+  </div>
+</section>
+
+<!-- ===== ACCESOS RÁPIDOS ===== -->
+<section class="seccion">
+  <div class="contenedor">
+    <h2 class="titulo-seccion">Explora nuestra pastelería</h2>
+    <nav class="accesos" aria-label="Accesos rápidos">
+      <a class="acceso" href="#historia">Nuestra historia</a>
+      <a class="acceso" href="#catalogo">Catálogo</a>
+      <a class="acceso" href="#precios">Precios</a>
+      <a class="acceso" href="#chat">Escríbenos</a>
+    </nav>
+  </div>
+</section>
