@@ -1,0 +1,112 @@
+.precios-seccion {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2.5rem 1.25rem;
+  color: var(--color-texto, #2e2e2e);
+}
+
+.precios-encabezado {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.precios-encabezado h2 {
+  font-size: 2rem;
+  color: var(--color-principal, #b5486e);
+  margin-bottom: 0.5rem;
+}
+
+.bloque-precios {
+  margin-bottom: 3rem;
+}
+
+.bloque-precios h3 {
+  font-size: 1.4rem;
+  color: var(--color-principal, #b5486e);
+  margin-bottom: 1.25rem;
+  border-left: 4px solid var(--color-principal, #b5486e);
+  padding-left: 0.75rem;
+}
+
+/* Tarjetas responsivas */
+.tarjetas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+
+.tarjeta {
+  position: relative;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 12px;
+  padding: 1.5rem;
+  background-color: #ffffff;
+  color: var(--color-texto, #2e2e2e);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.tarjeta.destacada {
+  border: 2px solid var(--color-principal, #b5486e);
+}
+
+.etiqueta {
+  display: inline-block;
+  background-color: var(--color-principal, #b5486e);
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  margin-bottom: 0.5rem;
+}
+
+.tarjeta h4 {
+  font-size: 1.2rem;
+  margin: 0 0 0.35rem;
+}
+
+.detalle {
+  font-size: 0.9rem;
+  opacity: 0.8;
+  margin-bottom: 1rem;
+}
+
+.precio {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--color-principal, #b5486e);
+  margin: 0 0 1rem;
+}
+
+.tarjeta ul {
+  padding-left: 1.2rem;
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* Tabla responsiva */
+.tabla-contenedor {
+  overflow-x: auto;
+}
+
+.tabla-precios {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #ffffff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.tabla-precios th {
+  background-color: var(--color-principal, #b5486e);
+  color: #ffffff;
+  text-align: left;
+  padding: 0.9rem 1rem;
+}
+
+.tabla-precios td {
+  padding: 0.85rem 1rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  color: var(--color-texto, #2e2e2e);
+}
