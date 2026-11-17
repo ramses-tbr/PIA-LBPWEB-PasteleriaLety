@@ -1,2 +1,101 @@
-<h2>Historia</h2>
-<p>aqui va historia</p>
+<div class="seccion">
+  <div class="contenedor historia">
+    <h2 class="titulo-seccion">Nuestra historia</h2>
+    <p class="subtitulo-seccion">
+      Pastelería Lety es una empresa familiar originaria de Monterrey, Nuevo León, dedicada a los
+      postres, los pasteles y la repostería fina.
+    </p>
+
+    <section class="historia__bloque" aria-labelledby="historia-origen">
+      <h3 id="historia-origen">Origen y año de creación</h3>
+      <p>
+        La empresa inició sus actividades a finales de los años setenta, cuando una familia de
+        Monterrey comenzó a comercializar empanadas de piña y cajeta, pastel de fresa con crema y
+        rollo de cajeta, elaborados con sus propias recetas. Su consolidación como empresa ocurrió en
+        <strong>1987</strong>.
+      </p>
+      <p>
+        Por eso aparecen dos fechas en esta historia: la primera marca el inicio de la actividad
+        familiar y la segunda, la constitución del negocio como empresa.
+      </p>
+
+      <ol class="historia__linea">
+        @for (hito of hitos; track hito.fecha) {
+          <li class="historia__hito tarjeta">
+            <span class="etiqueta">{{ hito.fecha }}</span>
+            <h4>{{ hito.titulo }}</h4>
+            <p>{{ hito.descripcion }}</p>
+          </li>
+        }
+      </ol>
+    </section>
+
+    <section class="historia__bloque" aria-labelledby="historia-motivo">
+      <h3 id="historia-motivo">Motivo de su creación</h3>
+      <p>
+        La fuente consultada no menciona una razón específica para la creación del negocio. Lo que
+        sí señala es que una familia de Monterrey inició actividades comercializando sus propios
+        productos de repostería y que la preferencia del público y la demanda hicieron crecer a la
+        empresa, junto con el número de sucursales.
+      </p>
+    </section>
+
+    <section class="historia__bloque" aria-labelledby="historia-relevante">
+      <h3 id="historia-relevante">Información relevante</h3>
+      <div class="cuadricula">
+        @for (dato of datosRelevantes; track dato.titulo) {
+          <article class="tarjeta">
+            <h4>{{ dato.titulo }}</h4>
+            <p>{{ dato.descripcion }}</p>
+          </article>
+        }
+      </div>
+    </section>
+
+    <section class="historia__bloque" aria-labelledby="historia-identidad">
+      <h3 id="historia-identidad">Misión, visión, valores y objetivos</h3>
+      <div class="historia__pestanas">
+        @for (pestana of pestanas; track pestana.id) {
+          <button
+            type="button"
+            class="btn btn-secundario historia__pestana"
+            [class.historia__pestana--activa]="pestana.id === pestanaActiva()"
+            [attr.aria-pressed]="pestana.id === pestanaActiva()"
+            (click)="seleccionar(pestana.id)"
+          >
+            {{ pestana.titulo }}
+          </button>
+        }
+      </div>
+
+      <div class="tarjeta historia__contenido" aria-live="polite">
+        <h4>{{ contenidoActivo().titulo }}</h4>
+        @if (contenidoActivo().texto) {
+          <p>{{ contenidoActivo().texto }}</p>
+        }
+        @if (contenidoActivo().lista) {
+          <ul class="historia__lista">
+            @for (item of contenidoActivo().lista; track item) {
+              <li>{{ item }}</li>
+            }
+          </ul>
+        }
+        @if (contenidoActivo().nota) {
+          <p class="historia__aviso">{{ contenidoActivo().nota }}</p>
+        }
+      </div>
+    </section>
+
+    <section class="historia__bloque historia__fuentes" aria-labelledby="historia-fuentes">
+      <h3 id="historia-fuentes">Fuentes</h3>
+      <ul>
+        @for (fuente of fuentes; track fuente.enlace) {
+          <li>
+            {{ fuente.texto }} <em>{{ fuente.titulo }}</em>
+            <a [href]="fuente.enlace" target="_blank" rel="noopener">{{ fuente.enlace }}</a>
+          </li>
+        }
+      </ul>
+    </section>
+  </div>
+</div>
