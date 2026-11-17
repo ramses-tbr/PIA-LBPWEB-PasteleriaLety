@@ -1,0 +1,111 @@
+
+/* ===== CATÁLOGO ===== */
+.catalogo-cuadricula {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--espacio-md);
+  margin-top: var(--espacio-md);
+}
+
+/* ===== FILTROS ===== */
+.filtros-catalogo {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: var(--espacio-sm);
+  margin: var(--espacio-md) 0;
+}
+
+.filtro {
+  padding: var(--espacio-xs) var(--espacio-md);
+  border: 2px solid var(--color-rosa);
+  border-radius: var(--radio);
+  background-color: var(--color-blanco);
+  color: var(--color-cafe);
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color var(--transicion), color var(--transicion);
+}
+
+.filtro:hover,
+.filtro.activo {
+  background-color: var(--color-acento);
+  border-color: var(--color-acento);
+  color: var(--color-texto-claro);
+}
+
+/* ===== TARJETAS DE PASTELES ===== */
+.tarjeta-pastel {
+  overflow: hidden;
+  background-color: var(--color-blanco);
+  border-radius: var(--radio);
+  box-shadow: var(--sombra);
+  transition: transform var(--transicion), box-shadow var(--transicion);
+}
+
+.tarjeta-pastel:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--sombra-fuerte);
+}
+
+/* ===== IMÁGENES ===== */
+.pastel-imagen {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  background-color: var(--color-rosa-claro);
+}
+
+.pastel-imagen img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ===== INFORMACIÓN DEL PASTEL ===== */
+.pastel-contenido {
+  padding: var(--espacio-md);
+}
+
+.pastel-categoria {
+  display: inline-block;
+  padding: 5px 10px;
+  margin-bottom: var(--espacio-xs);
+  border-radius: var(--radio);
+  background-color: var(--color-rosa-claro);
+  color: var(--color-cafe);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.pastel-contenido h3 {
+  margin-bottom: var(--espacio-xs);
+  color: var(--color-cafe);
+}
+
+.pastel-contenido p {
+  color: var(--color-texto);
+  line-height: 1.5;
+  margin-bottom: var(--espacio-md);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 992px) {
+  .catalogo-cuadricula {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .catalogo-cuadricula {
+    grid-template-columns: 1fr;
+  }
+
+  .pastel-imagen {
+    height: 230px;
+  }
+
+  .filtros-catalogo {
+    gap: var(--espacio-xs);
+  }
+}

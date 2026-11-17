@@ -1,2 +1,79 @@
-<h2>Catálogo</h2>
-<p>aqui va catálogo</p>
+<section class="seccion" id="catalogo">
+  <div class="contenedor">
+
+    <h2 class="titulo-seccion">Nuestro catálogo</h2>
+
+    <p class="subtitulo-seccion">
+      Descubre nuestros deliciosos pasteles, preparados para
+      endulzar tus momentos especiales.
+    </p>
+
+    <!-- FILTROS POR CATEGORÍA -->
+    <div class="filtros-catalogo">
+      <button
+        type="button"
+        class="filtro"
+        [class.activo]="categoriaSeleccionada === 'Todos'"
+        (click)="filtrarCategoria('Todos')">
+        Todos
+      </button>
+
+      <button
+        type="button"
+        class="filtro"
+        [class.activo]="categoriaSeleccionada === 'Chocolate'"
+        (click)="filtrarCategoria('Chocolate')">
+        Chocolate
+      </button>
+
+      <button
+        type="button"
+        class="filtro"
+        [class.activo]="categoriaSeleccionada === 'Frutas'"
+        (click)="filtrarCategoria('Frutas')">
+        Frutas
+      </button>
+
+      <button
+        type="button"
+        class="filtro"
+        [class.activo]="categoriaSeleccionada === 'Especiales'"
+        (click)="filtrarCategoria('Especiales')">
+        Especiales
+      </button>
+    </div>
+
+    <!-- TARJETAS DE PASTELES -->
+    <div class="cuadricula catalogo-cuadricula">
+
+      @for (pastel of pastelesFiltrados; track pastel.nombre) {
+        <article class="tarjeta tarjeta-pastel">
+
+          <div class="pastel-imagen">
+            <img
+                [src]="pastel.imagen"
+                [alt]="'Imagen del pastel ' + pastel.nombre"
+            />
+          </div>
+
+          <div class="pastel-contenido">
+
+            <span class="pastel-categoria">
+                {{ Array.isArray(pastel.categoria)
+                ? pastel.categoria.join(' / ')
+                : pastel.categoria }}
+                </span>
+
+            <h3>{{ pastel.nombre }}</h3>
+
+            <p>{{ pastel.descripcion }}</p>
+
+          </div>
+
+        </article>
+      }
+
+    </div>
+
+  </div>
+</section>
