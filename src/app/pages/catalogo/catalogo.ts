@@ -46,6 +46,10 @@ export class Catalogo {
     this.categoriaSeleccionada = categoria;
   }
 
+  categoriaTexto(categoria: string | string[]): string {
+    return Array.isArray(categoria) ? categoria.join(' / ') : categoria;
+  }
+
   // Mostrar pasteles según el filtro
   get pastelesFiltrados() {
   if (this.categoriaSeleccionada === 'Todos') {

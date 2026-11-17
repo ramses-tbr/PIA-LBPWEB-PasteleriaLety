@@ -59,9 +59,7 @@
           <div class="pastel-contenido">
 
             <span class="pastel-categoria">
-                {{ Array.isArray(pastel.categoria)
-                ? pastel.categoria.join(' / ')
-                : pastel.categoria }}
+                {{ categoriaTexto(pastel.categoria) }}
                 </span>
 
             <h3>{{ pastel.nombre }}</h3>
