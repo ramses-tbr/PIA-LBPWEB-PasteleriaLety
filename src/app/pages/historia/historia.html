@@ -33,7 +33,7 @@
     <section class="historia__bloque" aria-labelledby="historia-motivo">
       <h3 id="historia-motivo">Motivo de su creación</h3>
       <p>
-        La fuente consultada no menciona una razón específica para la creación del negocio. Lo que
+        La información disponible sobre el negocio no menciona una razón específica para su creación. Lo que
         sí señala es que una familia de Monterrey inició actividades comercializando sus propios
         productos de repostería y que la preferencia del público y la demanda hicieron crecer a la
         empresa, junto con el número de sucursales.
@@ -84,18 +84,6 @@
           <p class="historia__aviso">{{ contenidoActivo().nota }}</p>
         }
       </div>
-    </section>
-
-    <section class="historia__bloque historia__fuentes" aria-labelledby="historia-fuentes">
-      <h3 id="historia-fuentes">Fuentes</h3>
-      <ul>
-        @for (fuente of fuentes; track fuente.enlace) {
-          <li>
-            {{ fuente.texto }} <em>{{ fuente.titulo }}</em>
-            <a [href]="fuente.enlace" target="_blank" rel="noopener">{{ fuente.enlace }}</a>
-          </li>
-        }
-      </ul>
     </section>
   </div>
 </div>

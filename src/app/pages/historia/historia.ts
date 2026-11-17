@@ -19,12 +19,6 @@ interface Pestana {
   nota?: string;
 }
 
-interface Fuente {
-  texto: string;
-  titulo: string;
-  enlace: string;
-}
-
 @Component({
   selector: 'app-historia',
   imports: [],
@@ -117,19 +111,6 @@ export class Historia {
       ],
       nota:
         'Redacción propuesta por el equipo para este proyecto académico; no es una declaración oficial de Pastelería Lety.',
-    },
-  ];
-
-  readonly fuentes: Fuente[] = [
-    {
-      texto: 'GASDA. (2017, 1 de marzo).',
-      titulo: 'Pastelería Lety: historia, sabor y cómo ordenar.',
-      enlace: 'https://gasda.com.ar/catalogo-de-pasteleria-lety-infantiles/',
-    },
-    {
-      texto: 'Pastelería Lety. (s. f.-b).',
-      titulo: '¿Quiénes somos?',
-      enlace: 'https://pastelerialety3.webnode.mx/quienes-somos-/',
     },
   ];
 

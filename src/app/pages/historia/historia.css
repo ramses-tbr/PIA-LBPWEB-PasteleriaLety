@@ -78,20 +78,6 @@
   margin-bottom: var(--espacio-xs);
 }
 
-.historia__fuentes ul {
-  list-style: none;
-  margin-top: var(--espacio-xs);
-}
-
-.historia__fuentes li {
-  margin-bottom: var(--espacio-xs);
-  padding-left: var(--espacio-md);
-  text-indent: calc(-1 * var(--espacio-md));
-  font-size: var(--texto-pequeno);
-  color: var(--color-texto-suave);
-  overflow-wrap: anywhere;
-}
-
 @media (max-width: 768px) {
   .historia__pestana {
     flex: 1 1 40%;
